@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Berry Game</string>
+    <string name="name">Name</string>
+    <string name="easy">Easy</string>
+    <string name="medium">Medium</string>
+    <string name="hard">Hard</string>
+</resources>
