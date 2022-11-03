@@ -2,6 +2,7 @@ package com.example.berrygame;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.ViewTreeObserver;
@@ -17,6 +18,7 @@ public class GameActivity extends AppCompatActivity {
     private Game game;
     private final Handler handler = new Handler();
     private Singleton singleton;
+    private MediaPlayer pokemonsong = new MediaPlayer();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,5 +49,15 @@ public class GameActivity extends AppCompatActivity {
                 });
             }
         }, 0, 20);
+
+        //pokemonsong = MediaPlayer.create(GameActivity.this, R.raw.pokemonsong);
+        //pokemonsong.start();
+        //pokemonsong.setOnCompletionListener(mp -> pokemonsong.start());
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        pokemonsong.reset();
     }
 }
