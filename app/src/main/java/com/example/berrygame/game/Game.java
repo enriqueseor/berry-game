@@ -25,7 +25,7 @@ public class Game extends View {
 
     public int width, height, pikachuPOSX, pikachuPOSY, radium, berryPOSX, berryPOSY, cherubiPOSX, cherubiPOSY, puntuation;
     private final Random random = new Random();
-    private MediaPlayer gameloop = new MediaPlayer();
+    private MediaPlayer pokemonsong = new MediaPlayer();
 
     public Game(Context context) {
         super(context);
@@ -33,9 +33,9 @@ public class Game extends View {
 
     public Game(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
-        gameloop = MediaPlayer.create(context, R.raw.gameloop);
-        gameloop.start();
-        gameloop.setOnCompletionListener(mp -> gameloop.start());
+        pokemonsong = MediaPlayer.create(context, R.raw.pokemonsong);
+        pokemonsong.start();
+        pokemonsong.setOnCompletionListener(mp -> pokemonsong.start());
     }
 
     @SuppressLint("ClickableViewAccessibility")
@@ -96,7 +96,7 @@ public class Game extends View {
             berryPOSX = random.nextInt(width);
         }
 
-        Bitmap berrybitmap = BitmapFactory.decodeResource(getResources(), R.drawable.bayaframbu);
+        Bitmap berrybitmap = BitmapFactory.decodeResource(getResources(), R.drawable.razzberry);
         canvas.drawBitmap(berrybitmap, null , berryCollider, berry);
 
         //CHERUBI
